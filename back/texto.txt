@@ -1,0 +1,1 @@
+{'Temperatura': 20, 'Humedad': 60}
