@@ -7,29 +7,15 @@ import GaugeChart from 'react-gauge-chart';
 
 var socket = new W3CWebSocket('ws://localhost:8000/ws/some_url/')
 
-
 function App() {
-
   const [page, setPage] = React.useState({Temperatura: 0.0, Humedad: 0.0});
-
-
- 
-
-
     socket.onopen = () => {
       console.log('WebSocket Client Connected');
     };
     socket.onmessage = function(event){
-      var data = JSON.parse(event.data);
-      
-      setPage(data)
-      
-      
+      var data = JSON.parse(event.data); 
+      setPage(data)   
     };
-  
-
-    
-    
   return (
     <div className="App">
       <div className="Gauge1">
